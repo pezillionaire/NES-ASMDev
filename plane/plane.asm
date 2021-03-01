@@ -145,22 +145,22 @@ NMI:
   RTI ; Interupt Return
 
 PalletteData:
-  .byte $22,$29,$1A,$0F,$22,$36,$17,$0F,$22,$30,$21,$0F,$22,$27,$17,$0F ;bg palette data
-  .byte $22,$16,$27,$18,$22,$1A,$30,$27,$22,$16,$30,$27,$22,$0F,$36,$17 ;sprite palette data
+  .byte $22,$20,$2D,$3D,$22,$20,$2D,$3D,$22,$20,$2D,$3D,$22,$20,$2D,$3D ;bg palette data
+  .byte $22,$20,$3D,$2D,$22,$20,$2D,$3D;sprite palette data
 
 WorldData:
   .incbin "world.bin"
 
 ; Y-offset, sprite tile, ?? atributes, X-offset
 SpriteData:
-  .byte $08, $00, $00, $08
-  .byte $08, $01, $00, $10
-  .byte $10, $02, $00, $08
-  .byte $10, $03, $00, $10
-  .byte $18, $04, $00, $08
-  .byte $18, $05, $00, $10
-  .byte $20, $06, $00, $08
-  .byte $20, $07, $00, $10
+  .byte $00, $00, $00, $00
+  .byte $00, $01, $00, $08
+  ; .byte $10, $02, $00, $08
+  ; .byte $10, $03, $00, $10
+  ; .byte $18, $04, $00, $08
+  ; .byte $18, $05, $00, $10
+  ; .byte $20, $06, $00, $08
+  ; .byte $20, $07, $00, $10
 
 
 .segment "VECTORS"
@@ -168,4 +168,4 @@ SpriteData:
   .word Reset
   ;
 .segment "CHARS"
-  .incbin "hellomario.chr"
+  .incbin "plane.chr"
